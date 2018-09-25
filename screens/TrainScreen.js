@@ -5,7 +5,7 @@ import {
   AsyncStorage
 } from 'react-native';
 import Strings from '../constants/Strings';
-
+import ConstObj from '../constants/Objects';
 
 class TrainScreen extends React.Component {
   static navigationOptions = {
@@ -13,10 +13,12 @@ class TrainScreen extends React.Component {
   };
 
   render() {
+    console.log(ConstObj.buttonTextStyle);
     return (<View style={styles.container}>
       <Button
+        textStyle={ConstObj.buttonTextStyle}
         onPress={this.trainPressed.bind(this)}
-        style={styles.trainButtonStyle}>
+        style={ConstObj.buttonStyle}>
         Train
       </Button>
     </View>)
@@ -39,10 +41,8 @@ class TrainScreen extends React.Component {
 const styles = {
   container: {
     flex: 1,
-    alignItems: 'center'
-  },
-  trainButtonStyle: {
-    width: '100%'
+    alignItems: 'center',
+    backgroundColor: '#fff'
   }
 }
 

@@ -3,7 +3,6 @@ import {
   StyleSheet,
   Text,
   View,
-  Button,
   AsyncStorage
 } from 'react-native';
 import ImageCategoryPicker from '../components/ImageCategoryPicker';

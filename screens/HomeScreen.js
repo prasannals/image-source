@@ -9,6 +9,7 @@ import { FileSystem } from 'expo';
 import Button from 'apsl-react-native-button';
 import FolderList from '../components/FolderList';
 import Strings from '../constants/Strings';
+import ConstObj from '../constants/Objects';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -43,7 +44,8 @@ export default class HomeScreen extends React.Component {
           onDeleteFolder={this.onDeleteFolder.bind(this)}
         />
         <Button
-          style={styles.selectImageButtonStyle}
+          textStyle={ConstObj.buttonTextStyle}
+          style={ConstObj.buttonStyle}
           onPress={() => this.props.navigation.navigate('ImageSelectionScreen', {
             onSubmit: this.refresh.bind(this)
           })}
@@ -80,8 +82,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff'
-  },
-  selectImageButtonStyle: {
-
   }
 });

@@ -17,6 +17,7 @@ import Button from 'apsl-react-native-button';
 import { WebBrowser, ImagePicker, Permissions } from 'expo';
 import TextInputModal from '../components/TextInputModal';
 import { MonoText } from '../components/StyledText';
+import ConstObj from '../constants/Objects';
 
 class ImageCategoryPicker extends React.Component {
 
@@ -74,6 +75,8 @@ class ImageCategoryPicker extends React.Component {
           <View
             style={styles.pickFromDeviceButtonStyle}>
             <Button
+              textStyle={ConstObj.buttonTextStyle}
+              style={ConstObj.buttonStyle}
               onPress={this.handleImagePick}
             >
               Pick from Device
@@ -82,6 +85,8 @@ class ImageCategoryPicker extends React.Component {
           <View
             style={styles.pickFromCameraButtonStyle}>
             <Button
+              textStyle={ConstObj.buttonTextStyle}
+              style={ConstObj.buttonStyle}
               onPress={this.handleCameraPick}
             >
               Pick using Camera
@@ -97,6 +102,8 @@ class ImageCategoryPicker extends React.Component {
           <View
             style={styles.submitButtonStyle}>
             <Button
+              textStyle={ConstObj.buttonTextStyle}
+              style={ConstObj.buttonStyle}
               onPress={this.submitPressed.bind(this)}
             >
               Submit

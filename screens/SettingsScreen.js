@@ -6,6 +6,7 @@ import {
 import Button from 'apsl-react-native-button';
 import LabeledInput from '../components/LabeledInput';
 import Strings from '../constants/Strings';
+import ConstObj from '../constants/Objects';
 
 export default class SettingsScreen extends React.Component {
   static navigationOptions = {
@@ -49,6 +50,8 @@ export default class SettingsScreen extends React.Component {
         />
       </View>
       <Button
+        textStyle={ConstObj.buttonTextStyle}
+        style={ConstObj.buttonStyle}
         onPress={this.saveEndpoints.bind(this)}
       >
       Save
