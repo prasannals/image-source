@@ -1,9 +1,9 @@
 import React from 'react';
 import {
   View,
-  Button,
   AsyncStorage
 } from 'react-native';
+import Button from 'apsl-react-native-button';
 import LabeledInput from '../components/LabeledInput';
 import Strings from '../constants/Strings';
 
@@ -49,9 +49,10 @@ export default class SettingsScreen extends React.Component {
         />
       </View>
       <Button
-        title='Save'
         onPress={this.saveEndpoints.bind(this)}
-      />
+      >
+      Save
+      </Button>
     </View>);
   }
 

@@ -6,7 +6,6 @@ import {
   StyleSheet,
   Text,
   View,
-  Button,
   TextInput,
   KeyboardAvoidingView,
   Picker,
@@ -14,6 +13,7 @@ import {
   TouchableHighlight,
   AsyncStorage
 } from 'react-native';
+import Button from 'apsl-react-native-button';
 import { WebBrowser, ImagePicker, Permissions } from 'expo';
 import TextInputModal from '../components/TextInputModal';
 import { MonoText } from '../components/StyledText';
@@ -75,17 +75,17 @@ class ImageCategoryPicker extends React.Component {
             style={styles.pickFromDeviceButtonStyle}>
             <Button
               onPress={this.handleImagePick}
-              color="#841584"
-              title="Pick from Device"
-            />
+            >
+              Pick from Device
+            </Button>
           </View>
           <View
             style={styles.pickFromCameraButtonStyle}>
             <Button
               onPress={this.handleCameraPick}
-              color="#841584"
-              title="Pick using Camera"
-            />
+            >
+              Pick using Camera
+            </Button>
           </View>
           <Image
             source={this.state.imageUri.trim() === '' ? require('../assets/images/placeholder-image.jpg') : { uri: this.state.imageUri }}
@@ -98,9 +98,9 @@ class ImageCategoryPicker extends React.Component {
             style={styles.submitButtonStyle}>
             <Button
               onPress={this.submitPressed.bind(this)}
-              color="#841584"
-              title="Submit"
-            />
+            >
+              Submit
+            </Button>
           </View>
         </KeyboardAvoidingView>
         </ScrollView>

@@ -2,11 +2,11 @@ import React from 'react';
 import {
   StyleSheet,
   Text,
-  View,
-  Button
+  View
 } from 'react-native';
 import ImageCategoryPicker from '../components/ImageCategoryPicker';
 import { FileSystem } from 'expo';
+import Button from 'apsl-react-native-button';
 import FolderList from '../components/FolderList';
 import Strings from '../constants/Strings';
 
@@ -44,11 +44,12 @@ export default class HomeScreen extends React.Component {
         />
         <Button
           style={styles.selectImageButtonStyle}
-          title={'Select Image'}
           onPress={() => this.props.navigation.navigate('ImageSelectionScreen', {
             onSubmit: this.refresh.bind(this)
           })}
-        />
+        >
+        Select Image
+        </Button>
       </View>);
   }
 
