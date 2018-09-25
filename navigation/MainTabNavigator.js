@@ -4,7 +4,7 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 import { FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons';
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
+import PredictScreen from '../screens/PredictScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import FolderView from '../components/FolderView';
 import ImageScreen from '../components/ImageScreen';
@@ -41,7 +41,7 @@ TrainStack.navigationOptions = {
 };
 
 const PredictStack = createStackNavigator({
-  Links: LinksScreen,
+  Links: PredictScreen,
 });
 
 PredictStack.navigationOptions = {

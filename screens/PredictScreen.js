@@ -4,7 +4,7 @@ import { ExpoLinksView } from '@expo/samples';
 import ImageCategoryPicker from '../components/ImageCategoryPicker';
 import Strings from '../constants/Strings';
 
-export default class LinksScreen extends React.Component {
+export default class PredictScreen extends React.Component {
   static navigationOptions = {
     title: 'Predict',
   };
