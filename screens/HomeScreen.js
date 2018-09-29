@@ -2,7 +2,8 @@ import React from 'react';
 import {
   StyleSheet,
   Text,
-  View
+  View,
+  AsyncStorage
 } from 'react-native';
 import ImageCategoryPicker from '../components/ImageCategoryPicker';
 import { FileSystem } from 'expo';
@@ -52,7 +53,64 @@ export default class HomeScreen extends React.Component {
         >
         Select Image
         </Button>
+
+        <Button
+          textStyle={ConstObj.buttonTextStyle}
+          style={ConstObj.buttonStyle}
+          onPress={this.sendAllImages.bind(this)}
+        >
+        Send all images to server
+        </Button>
+
       </View>);
+  }
+
+  async sendToServer(imageUri, category) {
+    let endpoints = await AsyncStorage.getItem(Strings.endpoints);
+
+    endpoints = JSON.parse(endpoints);
+    const endpoint = endpoints.dataEndpoint;
+    const uri = imageUri;
+
+    const photo = {
+        uri: uri,
+        type: 'image/jpeg',
+        name: 'image.jpg'
+    };
+
+    console.log(imageUri);
+    console.log(category);
+
+    const body = new FormData();
+    body.append('image', photo);
+    body.append('category', category);
+
+    console.log('Sending data to :' + endpoint);
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', endpoint);
+    xhr.onload = () => {
+      console.log(xhr.response);
+    }
+    xhr.send(body);
+    console.log('Data sent to :' + endpoint);
+
+  }
+
+  sendFolderImages(folderName) {
+    const folderDir = Strings.imageBaseDir + folderName + '/';
+    console.log('FOLDER DIR: ' + folderDir);
+    FileSystem.readDirectoryAsync(folderDir)
+      .then(arr => {
+        arr = arr.map(item => folderDir + item);
+        console.log("sending: "+ arr);
+        arr.map(uri => this.sendToServer(uri, folderName).then(() => console.log('sent')).catch(err => console.log('failed to send')) );
+      })
+      .catch(err => console.log('Couldn\'t read directory\n' + err));
+  }
+
+  sendAllImages() {
+    this.state.folders.map(folder => this.sendFolderImages(folder));
   }
 
   getFolders() {
