@@ -4,6 +4,6 @@ export default {
   },
   buttonStyle: {
     width: '100%',
-    backgroundColor: '#555555'
+    backgroundColor: '#555555',
   }
 }

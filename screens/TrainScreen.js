@@ -42,7 +42,11 @@ const styles = {
   container: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
+    paddingTop: 8,
+    paddingRight: 8,
+    paddingLeft: 8,
+    paddingBottom: 8,
   }
 }
 

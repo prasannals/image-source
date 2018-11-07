@@ -72,7 +72,11 @@ export default class SettingsScreen extends React.Component {
 const styles = {
   container: {
     flex: 1,
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
+    paddingTop: 8,
+    paddingRight: 8,
+    paddingLeft: 8,
+    paddingBottom: 0,
   },
   settingStyle: {
     flex: 1

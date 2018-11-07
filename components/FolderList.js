@@ -12,12 +12,16 @@ class FolderList extends React.Component {
       <View style={styles.container}>
         {this.props.folders.map(folder => {
           console.log(folder);
-          return <Folder
-                  folderName={folder}
+          return <View
+                  style={styles.folderContainer}
                   key={folder}
-                  navigation={this.props.navigation}
-                  onDeleteFolder={this.props.onDeleteFolder}
-                />;
+                >
+                  <Folder
+                    folderName={folder}
+                    navigation={this.props.navigation}
+                    onDeleteFolder={this.props.onDeleteFolder}
+                  />
+                </View>;
         })}
       </View>
     </ScrollView>);
@@ -36,6 +40,10 @@ const styles = {
   },
   textStyle: {
 
+  },
+  folderContainer: {
+    paddingTop: 4,
+    paddingBottom: 4
   }
 }
 
