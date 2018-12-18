@@ -28,7 +28,10 @@ class TrainScreen extends React.Component {
     AsyncStorage.getItem(Strings.endpoints)
       .then(endpoints => {
         endpoints = JSON.parse(endpoints);
-        trainEndpoint = endpoints.trainEndpoint;
+        endpoint = endpoints.endpoints.find(e => e.selected);
+        endpoint = 'http://' + endpoint.value.host + ':' + String(endpoint.value.port);
+        trainEndpoint = endpoint + '/train';
+        // console.log(trainEndpoint);
         fetch(trainEndpoint, {
           method: 'GET'
         });

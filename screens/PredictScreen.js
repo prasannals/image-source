@@ -25,7 +25,10 @@ export default class PredictScreen extends React.Component {
     AsyncStorage.getItem(Strings.endpoints)
       .then(endpoints => {
         endpoints = JSON.parse(endpoints);
-        endpoint = endpoints.predictEndpoint;
+        endpoint = endpoints.endpoints.find(e => e.selected);
+        endpoint = 'http://' + endpoint.value.host + ':' + String(endpoint.value.port);
+        endpoint = endpoint + '/predict';
+        // console.log(endpoint);
 
         var photo = {
             uri: imageUri,

@@ -69,7 +69,10 @@ export default class HomeScreen extends React.Component {
     let endpoints = await AsyncStorage.getItem(Strings.endpoints);
 
     endpoints = JSON.parse(endpoints);
-    const endpoint = endpoints.dataEndpoint;
+    endpoint = endpoints.endpoints.find(e => e.selected);
+    endpoint = 'http://' + endpoint.value.host + ':' + String(endpoint.value.port);
+    endpoint = endpoint + '/data';
+    console.log('Data Endpoint: ' + endpoint);
     const uri = imageUri;
 
     const photo = {
@@ -120,7 +123,7 @@ export default class HomeScreen extends React.Component {
       .then(({ exists }) => {
         if (!exists) {
           console.log('Image Folder doesn\'t exist');
-          this.setState({folders: ['Image folder does not exist']});
+          this.setState({folders: []});
         } else {
           Expo.FileSystem.readDirectoryAsync(DIR)
             .then(arr => {
