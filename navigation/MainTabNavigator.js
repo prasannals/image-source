@@ -10,6 +10,7 @@ import FolderView from '../components/FolderView';
 import ImageScreen from '../components/ImageScreen';
 import ImageSelectionScreen from '../screens/ImageSelectionScreen';
 import TrainScreen from '../screens/TrainScreen';
+import AddEndpointScreen from '../screens/AddEndpointScreen';
 
 const DataStack = createStackNavigator({
   Home: HomeScreen,
@@ -53,6 +54,9 @@ PredictStack.navigationOptions = {
 
 const SettingsStack = createStackNavigator({
   Settings: SettingsScreen,
+  AddEndpointScreen: AddEndpointScreen
+},{
+  initialRouteName: 'Settings'
 });
 
 SettingsStack.navigationOptions = {
