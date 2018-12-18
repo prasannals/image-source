@@ -38,7 +38,7 @@ export default class ImageBrowser extends React.Component {
         item={item}
         index={index}
         selectImage={() => {
-          this.props.navigation.navigate('ImageScreen', { imageUri: item, onDelete: this.onDelete.bind(this) });
+          this.props.navigation.navigate('ImageScreen', { imageUri: item, onDelete: this.onDelete.bind(this), category: this.props.category });
         }}
       />
     )

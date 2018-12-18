@@ -72,7 +72,7 @@ export default class HomeScreen extends React.Component {
     endpoint = endpoints.endpoints.find(e => e.selected);
     endpoint = 'http://' + endpoint.value.host + ':' + String(endpoint.value.port);
     endpoint = endpoint + '/data';
-    
+
     const uri = imageUri;
 
     const photo = {

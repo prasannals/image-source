@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "image-source",
-    "description": "A very interesting project.",
+    "description": "Aimed at helping computer vision practitioners collect and send data to their predictive ML models easily.",
     "slug": "image-source",
     "privacy": "unlisted",
     "sdkVersion": "30.0.0",
