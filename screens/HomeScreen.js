@@ -114,6 +114,7 @@ export default class HomeScreen extends React.Component {
 
   sendAllImages() {
     this.state.folders.map(folder => this.sendFolderImages(folder));
+    alert('Images Sent to Server');
   }
 
   getFolders() {

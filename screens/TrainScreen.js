@@ -76,9 +76,11 @@ class TrainScreen extends React.Component {
         // console.log(trainEndpoint);
         fetch(trainEndpoint, {
           method: 'POST',
-          body: JSON.stringify(this.state.params.filter(e => e.key !== '' && e.value !== '')), 
+          body: JSON.stringify(this.state.params.filter(e => e.key !== '' && e.value !== '')),
           headers: { 'Content-type': 'application/json' }
-        });
+        }).then(response => response.text().then(text =>  alert('Trained \n' + text ) ) )
+        .catch(err => console.log('Failed to send train request. Error - ' + err));
+        
         console.log('Train Request Sent');
       })
       .catch(err => console.log('Could not obtain endpoints from storage. ' + err));
