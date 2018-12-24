@@ -33,7 +33,7 @@ export default class HomeScreen extends React.Component {
   }
 
   refresh() {
-    console.log('Refresh called');
+    // console.log('Refresh called');
     this.getFolders();
   }
 

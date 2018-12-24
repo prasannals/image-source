@@ -92,10 +92,6 @@ export default class HomeScreen extends React.Component {
   }
 
   onSubmitPressed(imageUri, category) {
-    console.log('Image Uri : ' + imageUri);
-    console.log('Category : ' + category);
-    // console.log(this);
-    console.log('submit pressed called');
     this.saveImage(imageUri, category);
     this.sendToServer(imageUri, category);
   }

@@ -86,9 +86,6 @@ export default class SettingsScreen extends React.Component {
   }
 
   render() {
-    /* Go ahead and delete ExpoConfigView and replace it with your
-     * content, we just wanted to give you a quick view of your config */
-     // console.log(this.state);
 
     return (<View style={styles.container}>
       <RadioGroup
@@ -112,7 +109,6 @@ export default class SettingsScreen extends React.Component {
     AsyncStorage.setItem(Strings.endpoints, JSON.stringify(state))
       .then(() => {
         console.log('Endpoints saved');
-        // alert('Settings saved');
       })
       .catch(err => console.log('Could not save endpoints. ' + err));
   }
