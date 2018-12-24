@@ -51,7 +51,7 @@ export default class HomeScreen extends React.Component {
             onSubmit: this.refresh.bind(this)
           })}
         >
-        Select Image
+        Add Image
         </Button>
 
         <Button
