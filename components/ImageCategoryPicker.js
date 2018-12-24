@@ -16,7 +16,6 @@ import {
 import Button from 'apsl-react-native-button';
 import { WebBrowser, ImagePicker, Permissions } from 'expo';
 import TextInputModal from '../components/TextInputModal';
-import { MonoText } from '../components/StyledText';
 import ConstObj from '../constants/Objects';
 
 class ImageCategoryPicker extends React.Component {

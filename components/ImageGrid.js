@@ -13,7 +13,7 @@ import ImageTile from './ImageTile';
 
 const { width } = Dimensions.get('window');
 
-export default class ImageBrowser extends React.Component {
+export default class ImageGrid extends React.Component {
 
   getItemLayout = (data,index) => {
     let length = width/4;

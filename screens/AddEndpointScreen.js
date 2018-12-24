@@ -9,7 +9,7 @@ import Strings from '../constants/Strings';
 import ConstObj from '../constants/Objects';
 
 
-export default class SettingsScreen extends React.Component {
+export default class AddEndpointScreen extends React.Component {
   static navigationOptions = {
     title: 'Settings',
   };
@@ -48,7 +48,7 @@ export default class SettingsScreen extends React.Component {
       </Button>
     </View>);
   }
-  
+
 }
 
 const styles = {

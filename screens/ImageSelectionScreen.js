@@ -10,7 +10,7 @@ import { FileSystem } from 'expo';
 import FolderList from '../components/FolderList';
 import Strings from '../constants/Strings';
 
-export default class HomeScreen extends React.Component {
+export default class ImageSelectionScreen extends React.Component {
   static navigationOptions = {
     title: 'Select Image'
   };
