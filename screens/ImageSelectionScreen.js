@@ -59,41 +59,8 @@ export default class ImageSelectionScreen extends React.Component {
       .catch(err => console.log('Error while getting dir info\n' + err));
   }
 
-  sendToServer(imageUri, category) {
-
-    AsyncStorage.getItem(Strings.endpoints)
-      .then(endpoints => {
-        endpoints = JSON.parse(endpoints);
-        endpoint = endpoints.dataEndpoint;
-
-        var photo = {
-            uri: imageUri,
-            type: 'image/jpeg',
-            name: 'image.jpg'
-        };
-
-        var body = new FormData();
-        body.append('image', photo);
-        body.append('category', category);
-
-        console.log('Sending data to :' + endpoint);
-
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', endpoint);
-        xhr.onload = () => {
-          console.log(xhr.response);
-        }
-        xhr.send(body);
-        console.log('Data sent to :' + endpoint);
-
-      })
-      .catch(err => console.log('Could not obtain endpoints from storage. ' + err));
-
-  }
-
   onSubmitPressed(imageUri, category) {
     this.saveImage(imageUri, category);
-    this.sendToServer(imageUri, category);
   }
 };
 
