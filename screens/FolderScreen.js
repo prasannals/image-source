@@ -11,7 +11,7 @@ import ConstObj from '../constants/Objects';
 
 const IMAGE_URIS = 'imageUris';
 
-export default class SettingsScreen extends React.Component {
+export default class FolderScreen extends React.Component {
 
   static navigationOptions = ({navigation}) => {
     return {
@@ -93,8 +93,6 @@ export default class SettingsScreen extends React.Component {
   }
 
   render() {
-    /* Go ahead and delete ExpoConfigView and replace it with your
-     * content, we just wanted to give you a quick view of your config */
     const category = this.props.navigation.getParam('folderName');
     const imageUris = this.props.navigation.getParam(IMAGE_URIS);
     console.log('ImageUris(FolderView): ' + imageUris);

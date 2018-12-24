@@ -6,15 +6,15 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import PredictScreen from '../screens/PredictScreen';
 import SettingsScreen from '../screens/SettingsScreen';
-import FolderView from '../components/FolderView';
-import ImageScreen from '../components/ImageScreen';
+import FolderScreen from '../screens/FolderScreen';
+import ImageScreen from '../screens/ImageScreen';
 import ImageSelectionScreen from '../screens/ImageSelectionScreen';
 import TrainScreen from '../screens/TrainScreen';
 import AddEndpointScreen from '../screens/AddEndpointScreen';
 
 const DataStack = createStackNavigator({
   Home: HomeScreen,
-  FolderView: FolderView,
+  FolderScreen: FolderScreen,
   ImageScreen: ImageScreen,
   ImageSelectionScreen: ImageSelectionScreen
 },{

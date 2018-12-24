@@ -16,7 +16,7 @@ class Folder extends React.Component {
       .then(arr => {
         arr = arr.map(item => this.DIR + item);
         console.log('ImagesUris(openFolder): ' + arr);
-        this.props.navigation.navigate('FolderView', {
+        this.props.navigation.navigate('FolderScreen', {
           imageUris: arr,
           folderName: this.props.folderName,
           onDelete: this.props.onDeleteFolder
